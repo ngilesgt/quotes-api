@@ -15,3 +15,21 @@ model User {
   email    String @unique
   password String
 }
+
+model Quotee {
+  id   Int    @id @default(autoincrement())
+  name String
+}
+
+model Quote {
+  id       Int    @id @default(autoincrement())
+  quoteeId Int
+  quote    String
+}
+
+model oldQuote {
+  id       Int    @id @default(autoincrement())
+  quoteId  Int
+  quoteeId Int
+  quote    String
+}
